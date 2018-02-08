@@ -1,0 +1,11 @@
+version: '3'
+services:
+  homeseer:
+    image: worthington
+    ports:
+    - "80:80"
+  gpio:
+    image: gpio
+    command: sh -c '/usr/src/app/wait-for homeseer:80 -- python /usr/src/app/poll_gpio.py'
+    depends_on:
+      - homeseer
