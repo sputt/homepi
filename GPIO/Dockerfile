@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "./poll_gpio.py" ]
+CMD [ "python", "-u", "./poll_gpio.py" ]
